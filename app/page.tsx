@@ -1,6 +1,12 @@
+'use client'
+
 import Link from "next/link"
+import { useState } from "react"
+import WaitlistForm from "@/components/WaitlistForm"
 
 export default function Home() {
+  const [showWaitlist, setShowWaitlist] = useState(false)
+
   return (
     <main className="bg-black text-white flex flex-col">
       {/* Navigation */}
@@ -23,12 +29,12 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link
-                href="#"
+              <button
+                onClick={() => setShowWaitlist(true)}
                 className="text-white hover:text-gray-300 transition-colors border border-white px-4 py-1 rounded-full"
               >
                 Join Waitlist
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -36,19 +42,19 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-[2.04175rem] xs:text-[6.125rem] font-bold tracking-tighter gradient-text leading-none xs:leading-tight font-['Halyard_Display']">
+        <h1 className="text-[2.04175rem] xs:text-[6.125rem] font-bold tracking-tighter gradient-text leading-none xs:leading-tight font-['Halyard_Display'] opacity-0 animate-slide-up">
           Understanding taste.
         </h1>
-        <p className="text-[10.263pt] xs:text-[1.5rem] font-semibold max-w-2xl font-['Halyard_Display'] mt-4 xs:mt-2">
+        <p className="text-[10.263pt] xs:text-[1.5rem] font-semibold max-w-2xl font-['Halyard_Display'] mt-4 xs:mt-2 opacity-0 animate-slide-up animation-delay-5">
           Introducing Hands, your intelligent, personal cooking assistant.
         </p>
 
-        <a
-          href="mailto:luiswoldu@gmail.com"
+        <button
+          onClick={() => setShowWaitlist(true)}
           className="mt-8 px-6 py-2.5 border border-white rounded-full font-['Halyard_Display'] text-sm font-normal hover:bg-white hover:text-black transition-colors duration-300"
         >
           Join Waitlist
-        </a>
+        </button>
       </div>
 
       {/* Description Section */}
@@ -69,10 +75,11 @@ export default function Home() {
         {/* First Container */}
         <div className="bg-gray-600 w-full h-[50vh] relative">
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4">Discover new flavors</h1>
-            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md">
-              Our AI-powered assistant analyzes thousands of recipes to help you explore new cuisines and cooking
-              techniques tailored to your preferences.
+            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4 opacity-0 animate-slide-up">
+            Goodbye bookmarks.
+            </h1>
+            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md opacity-0 animate-slide-up animation-delay-5">
+            Import recipes from anywhere—Instagram, TikTok, YouTube, and your favorite food blogs—in seconds.
             </p>
           </div>
         </div>
@@ -80,12 +87,11 @@ export default function Home() {
         {/* Second Container */}
         <div className="bg-blue-800 w-full h-[50vh] relative">
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4">
-              Personalized meal planning
+            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4 opacity-0 animate-slide-up animation-delay-10">
+              Always know what to make. 
             </h1>
-            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md">
-              Let Hands create weekly meal plans based on your dietary preferences, restrictions, and schedule. Save
-              time and reduce food waste with smart planning.
+            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md opacity-0 animate-slide-up animation-delay-15">
+            Find your recipes by ingredients or category to make leftovers into your next favorite meal.
             </p>
           </div>
         </div>
@@ -93,10 +99,11 @@ export default function Home() {
         {/* Third Container */}
         <div className="bg-amber-700 w-full h-[50vh] relative">
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4">Step-by-step guidance</h1>
-            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md">
-              Follow along with interactive cooking instructions that adapt to your pace and skill level. Hands provides
-              tips and techniques to help you cook with confidence.
+            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4 opacity-0 animate-slide-up animation-delay-15">
+            No one cooks like Hands.
+            </h1>
+            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md opacity-0 animate-slide-up animation-delay-20">
+            Hands can recommend new recipes, inspiration and weekly meals based on what you like to eat.
             </p>
           </div>
         </div>
@@ -104,12 +111,11 @@ export default function Home() {
         {/* Fourth Container */}
         <div className="bg-emerald-800 w-full h-[50vh] relative">
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4">
-              Smart ingredient substitutions
+            <h1 className="text-3xl md:text-5xl font-bold font-['Halyard_Display'] text-white mb-4 opacity-0 animate-slide-up animation-delay-20">
+            Gets to know you.
             </h1>
-            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md">
-              Don't have all the ingredients? Hands suggests intelligent substitutions based on what you have available,
-              ensuring your dishes still taste great.
+            <p className="text-sm md:text-base font-['Halyard_Display'] font-semibold text-gray-200 max-w-md opacity-0 animate-slide-up animation-delay-20">
+            Hands learns about your preferences, nutritional goals, even allergies, creating a personalized cooking experience.
             </p>
           </div>
         </div>
@@ -204,6 +210,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Waitlist Form Modal */}
+      {showWaitlist && <WaitlistForm onClose={() => setShowWaitlist(false)} />}
     </main>
   )
 }

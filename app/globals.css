@@ -52,6 +52,37 @@ body {
   font-display: swap;
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animation-delay-5 {
+  animation-delay: 0.1667s; /* 5 frames at 30fps */
+}
+
+.animation-delay-10 {
+  animation-delay: 0.3334s; /* 10 frames at 30fps */
+}
+
+.animation-delay-15 {
+  animation-delay: 0.5s; /* 15 frames at 30fps */
+}
+
+.animation-delay-20 {
+  animation-delay: 0.6667s; /* 20 frames at 30fps */
+}
+
 .font-helvetica {
   font-family: "Helvetica Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
