@@ -107,7 +107,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="min-h-[calc(95vh-4rem)] flex flex-col items-center pt-20 sm:pt-32 px-4 text-center">
-        <h1 className="text-[3rem] sm:text-[6rem] font-bold tracking-tighter gradient-text leading-none sm:leading-tight font-['Halyard_Display'] opacity-0 animate-slide-up">
+        <h1 className="text-[3rem] sm:text-[6rem] font-bold tracking-tighter bg-hero-gradient bg-hero-size bg-hero-position bg-no-repeat bg-clip-text text-transparent leading-none sm:leading-tight font-['Halyard_Display'] opacity-0 animate-slide-up">
           Understanding taste.
         </h1>
         <p className="text-[1.25rem] sm:text-[1.5rem] font-semibold max-w-2xl leading-7 font-['Halyard_Display'] mt-4 sm:mt-2 opacity-0 animate-slide-up animation-delay-5">

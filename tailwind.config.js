@@ -17,6 +17,15 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-gradient': "url('/Images/bg-gradient-hero.jpg')",
+      },
+      backgroundSize: {
+        'hero-size': '100% 100%',
+      },
+      backgroundPosition: {
+        'hero-position': 'center',
+      },
       screens: {
         xs: "440px", // Custom breakpoint at 440px
       },
@@ -58,8 +67,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         gradient: {
-          start: "#f5a623", // Orange/gold color
-          end: "#4a90e2", // Blue color
+          start: "#000000", // Orange/gold color
+          end: "#FFFFFF", // Blue color
         },
       },
       borderRadius: {
