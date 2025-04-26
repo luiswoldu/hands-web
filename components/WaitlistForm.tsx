@@ -55,8 +55,8 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
           ✕
         </button>
         
-        <h2 className="text-2xl font-bold font-['Halyard_Display'] mb-4">Join the waitlist</h2>
-        <p className="text-gray-600 mb-6 font-['Halyard_Display']">
+        <h2 className="text-2xl font-bold font-helvetica mb-4">Join the waitlist</h2>
+        <p className="text-gray-600 mb-6 font-helvetica">
           Be the first to experience the future of cooking with AI.
         </p>
 
@@ -64,7 +64,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
           {step === 1 ? (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 font-['Halyard_Display']">
+                <label className="block text-sm font-medium text-gray-700 mb-1 font-helvetica">
                   What's your name?
                 </label>
                 <input
@@ -73,13 +73,13 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Enter your full name"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black font-['Halyard_Display'] text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black font-helvetica text-black"
                   autoFocus
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors font-['Halyard_Display']"
+                className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors font-helvetica"
               >
                 Next
               </button>
@@ -87,7 +87,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
           ) : (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 font-['Halyard_Display']">
+                <label className="block text-sm font-medium text-gray-700 mb-1 font-helvetica">
                   What's your email?
                 </label>
                 <input
@@ -96,7 +96,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black font-['Halyard_Display'] text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black font-helvetica text-black"
                   autoFocus
                 />
               </div>
@@ -111,14 +111,14 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-['Halyard_Display']"
+                  className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-helvetica"
                 >
                   Back
                 </button>
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="flex-1 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors font-['Halyard_Display'] disabled:opacity-50"
+                  className="flex-1 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors font-helvetica disabled:opacity-50"
                 >
                   {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
                 </button>
