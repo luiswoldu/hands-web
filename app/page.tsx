@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <main className="bg-black text-white flex flex-col">
       {/* Navigation */}
-      <nav className="w-full py-8 px-6">
+      <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-black">
         <div className="container mx-auto">
           <ul className="flex justify-between sm:justify-end items-center">
             <div className="flex space-x-4 sm:space-x-6">

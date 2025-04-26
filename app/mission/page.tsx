@@ -11,7 +11,7 @@ export default function Mission() {
   return (
     <main className="bg-white text-black flex flex-col">
       {/* Navigation */}
-      <nav className="w-full py-8 px-6">
+      <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-white">
         <div className="container mx-auto">
           <ul className="flex justify-between sm:justify-end items-center">
             <div className="flex space-x-4 sm:space-x-6">
