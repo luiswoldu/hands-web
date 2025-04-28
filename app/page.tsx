@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
 import WaitlistForm from "@/components/WaitlistForm"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   const [showWaitlist, setShowWaitlist] = useState(false)
@@ -88,9 +89,9 @@ export default function Home() {
                 </Link>
               </li>
               <li className="hidden sm:block">
-                <Link href="#" className="text-white hover:text-gray-300 transition-colors">
+                <a href="mailto:luiswoldu@gmail.com" className="text-white hover:text-gray-300 transition-colors">
                   Careers
-                </Link>
+                </a>
               </li>
             </div>
             <li className="sm:ml-6">
@@ -314,55 +315,7 @@ export default function Home() {
       </section>
 
       {/* Footer Section */}
-      <footer className="w-full border-t border-white/10 py-8 px-6">
-        <div className="container mx-auto">
-          <div className="flex flex-col space-y-8">
-            {/* Logo and Links Row */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-              {/* Logo/Brand */}
-              <Link href="/" className="text-xl font-['Halyard_Display'] font-[350] mb-6 md:mb-0">
-                Hands
-              </Link>
-              
-              {/* Navigation Links */}
-              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-                <div className="flex space-x-8">
-                  <Link href="/mission" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    Mission
-                  </Link>
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    Careers
-                  </Link>
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    Join us
-                  </Link>
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    Contact
-                  </Link>
-                </div>
-                
-                {/* Social Links */}
-                <div className="flex space-x-8">
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    Instagram
-                  </Link>
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    X
-                  </Link>
-                  <Link href="#" className="text-white/80 hover:text-white font-['Halyard_Display'] font-[350]">
-                    TikTok
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-white/80 font-['Halyard_Display'] font-[350]">
-              Copyright Hands
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer theme="dark" />
 
       {/* Waitlist Form Modal */}
       {showWaitlist && <WaitlistForm onClose={() => setShowWaitlist(false)} />}
