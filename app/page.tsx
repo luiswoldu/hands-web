@@ -128,8 +128,8 @@ export default function Home() {
       <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-[2.25rem] sm:text-[3.25rem] font-semibold font-['Halyard_Display'] text-white leading-[1.1]">
-              Hands helps you plan meals, find new recipes and saves time cooking.
-              <span className="block mt-3">
+              Hands helps you organize recipes, get inspiration and shop easier than ever.
+              <span className="block mt-4">
                 Hands is the best way to cook with AI.
               </span>
             </h2>
