@@ -97,7 +97,7 @@ export default function Mission() {
               While personalization is everywhere—from grocery flyers to social media—most systems lack true context. At Hands, we focus on the most advanced and latest machine learning technologies to solve the challenge of prediction accuracy and context-awareness.
             </p>
             <p className="text-lg xs:text-[1.5rem] font-semibold font-['Halyard_Display'] leading-7 opacity-0 animate-slide-up animation-delay-5 mt-4 text-[#545454]">
-              We understand that the the food we eat daily isn't just a pattern, but a set of personal vectors that comes down to personality, mood and even genetics. We are driven to deploy software that feels like having a dedicated personal chef. You might even say that the app we are building, will feel like you have an extra pair of hands.
+              We understand that the food we eat daily isn't just a pattern, but a set of personal vectors that comes down to personality, mood and even genetics. We are driven to deploy software that feels like having a dedicated personal chef. You might even say that the app we are building, will feel like you have an extra pair of hands.
             </p>
             <p className="text-lg xs:text-[1.5rem] font-semibold font-['Halyard_Display'] leading-7 opacity-0 animate-slide-up animation-delay-5 mt-4 text-[#545454]">
               For our neural network to deliver context-aware, hyper-accurate suggestions, we are looking for deep learning experts to join us.
