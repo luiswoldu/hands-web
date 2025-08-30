@@ -8,7 +8,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
   const isDark = theme === 'dark'
   
   return (
-    <footer className={`w-full border-t ${isDark ? 'border-white/10' : 'border-black/10'} py-8 px-6`}>
+    <footer className={`w-full border-t ${isDark ? 'border-white/10' : 'border-black/10'} py-8`}>
       <div className="container mx-auto">
         <div className="flex flex-col space-y-8">
           {/* Logo and Links Row */}
@@ -20,14 +20,14 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
             
             {/* Navigation Links */}
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-              <div className="flex space-x-8">
+              <div className="flex space-x-4">
                 <Link href="/mission" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Mission
                 </Link>
                 <a href="mailto:luiswoldu@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Careers
                 </a>
-                <Link href="#" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <Link href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Contact
                 </Link>
               </div>
