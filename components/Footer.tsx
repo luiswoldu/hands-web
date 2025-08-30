@@ -27,7 +27,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 <a href="mailto:luiswoldu@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Careers
                 </a>
-                <Link href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <Link href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/70 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Contact
                 </Link>
               </div>
