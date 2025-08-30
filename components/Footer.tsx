@@ -31,13 +31,6 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                   Contact
                 </Link>
               </div>
-              
-              {/* Social Links */}
-              <div className="flex space-x-8">
-                <a href="https://www.instagram.com/chefpluz/" target="_blank" rel="noopener noreferrer" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
-                  Instagram
-                </a>
-              </div>
             </div>
           </div>
 
@@ -49,4 +42,4 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
       </div>
     </footer>
   )
-} 
+}
