@@ -22,20 +22,14 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
 
     try {
       const { error } = await supabase
-        .from('waitlist')  // Changed from 'waitlist_users' to 'waitlist'
+        .from('waitlist_users')
         .insert([{ 
           full_name: fullName,
           email, 
           created_at: new Date().toISOString() 
         }])
 
-      if (error) {
-        // Handle duplicate email error
-        if (error.code === '23505') {
-          throw new Error('This email is already on our waitlist!')
-        }
-        throw error
-      }
+      if (error) throw error
 
       setStatus('success')
       setMessage('Thanks for joining! We\'ll be in touch soon.')
@@ -43,11 +37,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       setEmail('')
     } catch (error) {
       setStatus('error')
-      if (error instanceof Error) {
-        setMessage(error.message)
-      } else {
-        setMessage('Something went wrong. Please try again.')
-      }
+      setMessage('Something went wrong. Please try again.')
     }
   }
 
@@ -172,4 +162,4 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       </div>
     </div>
   )
-}
+} 
