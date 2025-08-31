@@ -66,27 +66,35 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
           ✕
         </button>
         
-{status === 'success' ? (
-  <div className="flex flex-col items-center justify-center py-8">
-    <div className="w-16 h-16 bg-[#6CD401] rounded-full flex items-center justify-center mb-4">
-      <Check className="w-8 h-8 text-white" />
-    </div>
-    <div className="text-center space-y-2">
-      <p className="text-xl font-regular font-helvetica text-black">
-        Thank you. We'll be in touch soon. In the meantime, follow us on{' '}
-        <a 
-          href="https://www.instagram.com/h.ai.nds" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="underline hover:text-gray-700"
-        >
-          Instagram
-        </a>
-        .
-      </p>
-    </div>
-  </div>
-) : (
+        {status === 'success' ? (
+          <div className="flex flex-col items-center justify-center py-8">
+            <div className="w-16 h-16 bg-[#6CD401] rounded-full flex items-center justify-center mb-4">
+              <Check className="w-8 h-8 text-white" />
+            </div>
+            <div className="text-center space-y-2">
+              <p className="text-xl font-regular font-helvetica text-black">
+                Thank you. We'll be in touch soon. In the meantime, follow us on{' '}
+                <a 
+                  href="https://www.instagram.com/h.ai.nds" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-700"
+                >
+                  Instagram
+                </a>
+                {' '}and{' '}
+                <a 
+                  href="https://x.com/handsforai" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-700"
+                >
+                  X
+                </a>
+              </p>
+            </div>
+          </div>
+        ) : (
           <>
             <h2 className="text-2xl font-bold font-helvetica mb-4">Join the waitlist</h2>
             <p className="text-gray-600 mb-6 font-helvetica">
@@ -144,14 +152,14 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                     <button
                       type="button"
                       onClick={() => setStep(1)}
-                      className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-full hover:bg-gray-50 transition-colors font-helvetica"
+                      className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-helvetica"
                     >
                       Back
                     </button>
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="flex-1 bg-black text-white py-3 rounded-full hover:bg-gray-800 transition-colors font-helvetica disabled:opacity-50"
+                      className="flex-1 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors font-helvetica disabled:opacity-50"
                     >
                       {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
                     </button>
