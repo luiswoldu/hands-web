@@ -22,7 +22,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
               {/* Social Icons Container */}
               <div className="flex items-center space-x-2">
                 <a 
-                  href="https://www.instagram.com/h.ai.nds/" 
+                  href="#" 
                   className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
                   aria-label="Instagram"
                 >
@@ -32,7 +32,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 </a>
                 
                 <a 
-                  href="https://www.youtube.com/@luiswoldu" 
+                  href="#" 
                   className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
                   aria-label="YouTube"
                 >
@@ -42,7 +42,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 </a>
                 
                 <a 
-                  href="https://ca.linkedin.com/company/handsforu" 
+                  href="#" 
                   className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
                   aria-label="LinkedIn"
                 >

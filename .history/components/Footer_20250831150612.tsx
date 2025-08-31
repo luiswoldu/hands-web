@@ -22,8 +22,8 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
               {/* Social Icons Container */}
               <div className="flex items-center space-x-2">
                 <a 
-                  href="https://www.instagram.com/h.ai.nds/" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  href="#" 
+                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-black hover:bg-black/10'}`}
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -32,8 +32,8 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 </a>
                 
                 <a 
-                  href="https://www.youtube.com/@luiswoldu" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  href="#" 
+                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-black hover:bg-black/10'}`}
                   aria-label="YouTube"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -42,8 +42,8 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 </a>
                 
                 <a 
-                  href="https://ca.linkedin.com/company/handsforu" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  href="#" 
+                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-gray-600 hover:text-black hover:bg-black/10'}`}
                   aria-label="LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
