@@ -59,7 +59,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 <Link href="/mission" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Mission
                 </Link>
-                <a href="mailto:luiswoldu@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <a href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
                   Careers
                 </a>
                 <Link href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/70 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>

@@ -73,38 +73,53 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white flex flex-col">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-black">
-        <div className="container mx-auto">
-          <ul className="flex justify-between sm:justify-end items-center">
-            <div className="flex space-x-4 sm:space-x-6">
-              <li>
-                <Link href="/" className="text-white hover:text-gray-300 transition-colors">
-                  Hands
-                </Link>
-              </li>
-              <li>
-                <Link href="/mission" className="text-white hover:text-gray-300 transition-colors">
-                  Mission
-                </Link>
-              </li>
-              <li className="hidden sm:block">
-                <a href="mailto:luiswoldu@gmail.com" className="text-white hover:text-gray-300 transition-colors">
-                  Careers
-                </a>
-              </li>
-            </div>
-            <li className="sm:ml-6">
-              <button
-                onClick={() => setShowWaitlist(true)}
-                className="text-white hover:text-gray-300 transition-colors font-helvetica border border-white px-4 py-1 rounded-full"
-              >
-                Join Waitlist
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+   {/* Navigation */}
+<nav className="sticky top-0 z-20 w-full py-8 px-6 bg-black">
+  <div className="container mx-auto">
+    <ul className="flex justify-between sm:justify-end items-center">
+      {/* Left-side links */}
+      <li>
+        <ul className="flex space-x-4 sm:space-x-6">
+          <li>
+            <Link
+              href="/"
+              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
+            >
+              Hands
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/mission"
+              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
+            >
+              Mission
+            </Link>
+          </li>
+          <li className="hidden sm:block">
+            <a
+              href="mailto:handsforai@gmail.com"
+              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
+            >
+              Careers
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      {/* Right-side button */}
+      <li className="sm:ml-6">
+        <button
+          onClick={() => setShowWaitlist(true)}
+          className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display'] border border-white px-4 py-1 rounded-full"
+        >
+          Join Waitlist
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
       {/* Hero Section */}
       <div className="min-h-[calc(95vh-4rem)] flex flex-col items-center pt-20 sm:pt-32 px-4 text-center">
