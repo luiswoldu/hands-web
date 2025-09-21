@@ -104,6 +104,14 @@ export default function Home() {
               Careers
             </a>
           </li>
+          <li>
+            <Link
+              href="/updates"
+              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
+              >
+                Updates
+              </Link>
+          </li>
         </ul>
       </li>
 

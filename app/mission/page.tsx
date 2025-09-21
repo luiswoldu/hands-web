@@ -31,6 +31,13 @@ export default function Mission() {
                   Careers
                 </a>
               </li>
+              <li>
+                <Link
+                  href="/updates"
+                  className="text-black hover:text-gray-600 transition-colors">
+                  Updates
+                  </Link>
+              </li>
             </div>
             <li className="sm:ml-6">
               <button
