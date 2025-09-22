@@ -1,22 +1,15 @@
 "use client"
 
-// ...existing code...
 import Link from "next/link"
 import { useState } from "react"
 import Footer from "@/components/Footer"
 
 const updates = [
   {
-    slug: "test-announcement-1",
-    title: "Hands adds updates tab",
-    date: "2025-09-01",
-    excerpt: "We've launched an Updates page to keep you informed about our latest news and product developments.",
-  },
-  {
-    slug: "test-announcement-2",
-    title: "New features being developed",
-    date: "2025-09-01",
-    excerpt: "We're excited to announce that we're working on new features to enhance your experience with Hands.",
+    slug: "announcing-hands",
+    title: "Announcing Hands",
+    date: "2025-04-30",
+    excerpt: "Today, we're announcing Hands, your intelligent, personal cooking assistant.",
   },
 ]
 
@@ -28,8 +21,8 @@ export default function HomePage() {
       <main
         style={{
           background: "#ffffff",
-          color: "#000000", // ensure text is readable
-          minHeight: "calc(100vh - 72px)", // adjust 72px to match your nav height
+          color: "#000000",
+          minHeight: "100vh",
         }}>
             <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-white">
             <div className="container mx-auto">
@@ -71,7 +64,7 @@ export default function HomePage() {
         </nav>
 
         {/* Hero area with floating background heading */}
-        <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "56px 20px 0" }}>
+        <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "56px 20px 80px" }}>
           {/* floating decorative heading (visually large, low-opacity, animated) */}
           <h1
             aria-hidden="true"
@@ -87,7 +80,7 @@ export default function HomePage() {
               fontWeight: 900,
               color: "#000",
               opacity: 0.06,
-              letterSpacing: "-1px",
+              letterSpacing: "-0.05em",
               zIndex: 0,
               whiteSpace: "nowrap",
               willChange: "transform",
@@ -99,10 +92,7 @@ export default function HomePage() {
           {/* actual accessible page heading and content sits above the decorative heading */}
           <section style={{ position: "relative", zIndex: 1 }}>
             <header style={{ marginBottom: 28 }}>
-              <h2 style={{ margin: 0, fontSize: 42, lineHeight: 1.05 }}>Updates</h2>
-              <p style={{ color: "rgba(0,0,0,0.65)", marginTop: 10 }}>
-                Recent news, press releases, and product updates from Hands.
-              </p>
+              <h2 style={{ margin: 0, fontSize: 42, lineHeight: 1.05 }}>Latest News</h2>
             </header>
 
             <section aria-labelledby="updates-list">
@@ -112,9 +102,7 @@ export default function HomePage() {
                     <article>
                       <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "baseline" }}>
                         <h3 style={{ margin: 0, fontSize: 18 }}>
-                          <Link href={`/updates/${u.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
-                            {u.title}
-                          </Link>
+                          {u.title}
                         </h3>
                         <time style={{ color: "rgba(0,0,0,0.45)" }} dateTime={u.date}>
                           {new Date(u.date).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}
@@ -122,23 +110,11 @@ export default function HomePage() {
                       </div>
 
                       <p style={{ marginTop: 8, marginBottom: 12, color: "rgba(0,0,0,0.7)" }}>{u.excerpt}</p>
-
-                      <div>
-                        <Link href={`/updates/${u.slug}`} style={{ color: "#111", fontWeight: 600, textDecoration: "none" }}>
-                          Read more →
-                        </Link>
-                      </div>
                     </article>
                   </li>
                 ))}
               </ul>
             </section>
-
-            <footer style={{ marginTop: 36 }}>
-              <Link href="/" style={{ color: "rgba(0,0,0,0.7)", textDecoration: "none" }}>
-                ← Back to home
-              </Link>
-            </footer>
           </section>
         </div>
 
