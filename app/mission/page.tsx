@@ -2,54 +2,18 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
 import WaitlistForm from "@/components/WaitlistForm"
+import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
+import { useState } from "react"
+
 
 export default function Mission() {
   const [showWaitlist, setShowWaitlist] = useState(false)
 
   return (
     <main className="bg-white text-black flex flex-col">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-white">
-        <div className="container mx-auto">
-          <ul className="flex justify-between sm:justify-end items-center">
-            <div className="flex space-x-4 sm:space-x-6">
-              <li>
-                <Link href="/" className="text-black hover:text-gray-600 transition-colors">
-                  Hands
-                </Link>
-              </li>
-              <li>
-                <Link href="/mission" className="text-black hover:text-gray-600 transition-colors">
-                  Mission
-                </Link>
-              </li>
-              <li className="hidden sm:block">
-                <a href="mailto:luiswoldu@gmail.com" className="text-black hover:text-gray-600 transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/updates"
-                  className="text-black hover:text-gray-600 transition-colors">
-                  Updates
-                  </Link>
-              </li>
-            </div>
-            <li className="sm:ml-6">
-              <button
-                onClick={() => setShowWaitlist(true)}
-                className="text-black hover:text-gray-600 transition-colors font-helvetica border border-black px-4 py-1 rounded-full"
-              >
-                Join Waitlist
-              </button>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navigation theme="light" onWaitlistOpen={() => setShowWaitlist(true)} />
 
       {/* Mission Section */}
       <div className="min-h-[72vh] flex flex-col items-center justify-center px-4 text-center">
@@ -144,8 +108,7 @@ export default function Mission() {
       </section>
 
       {/* Footer Section */}
-      <Footer theme="light" />
-
+      <Footer theme="light" />      
       {showWaitlist && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg max-w-md w-full mx-4">
@@ -155,4 +118,4 @@ export default function Mission() {
       )}
     </main>
   )
-} 
+}

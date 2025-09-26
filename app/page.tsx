@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
 import WaitlistForm from "@/components/WaitlistForm"
+import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 
 export default function Home() {
@@ -73,61 +74,7 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white flex flex-col">
-   {/* Navigation */}
-<nav className="sticky top-0 z-20 w-full py-8 px-6 bg-black">
-  <div className="container mx-auto">
-    <ul className="flex justify-between sm:justify-end items-center">
-      {/* Left-side links */}
-      <li>
-        <ul className="flex space-x-4 sm:space-x-6">
-          <li>
-            <Link
-              href="/"
-              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
-            >
-              Hands
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/mission"
-              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
-            >
-              Mission
-            </Link>
-          </li>
-          <li className="hidden sm:block">
-            <a
-              href="mailto:handsforai@gmail.com"
-              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
-            >
-              Careers
-            </a>
-          </li>
-          <li>
-            <Link
-              href="/updates"
-              className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display']"
-              >
-                Updates
-              </Link>
-          </li>
-        </ul>
-      </li>
-
-      {/* Right-side button */}
-      <li className="sm:ml-6">
-        <button
-          onClick={() => setShowWaitlist(true)}
-          className="text-white text-lg hover:text-gray-300 transition-colors font-['Halyard_Display'] border border-white px-4 py-1 rounded-full"
-        >
-          Join Waitlist
-        </button>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+      <Navigation theme="dark" onWaitlistOpen={() => setShowWaitlist(true)} />
 
       {/* Hero Section */}
       <div className="min-h-[calc(95vh-4rem)] flex flex-col items-center pt-20 sm:pt-32 px-4 text-center">
@@ -345,4 +292,3 @@ export default function Home() {
     </main>
   )
 }
-

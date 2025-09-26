@@ -1,7 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
+import Navigation from "@/components/Navigation"
+import WaitlistForm from "@/components/WaitlistForm"
 import Footer from "@/components/Footer"
 
 const updates = [
@@ -14,54 +15,22 @@ const updates = [
 ]
 
 export default function HomePage() {
-    const [showWaitlist, setShowWaitlist] = useState(false)
+  const [showWaitlist, setShowWaitlist] = useState(false)
+  
   return (
     <>
-      {/* Top navigation - centered container, left aligned links like main/mission */}
       <main
         style={{
           background: "#ffffff",
           color: "#000000",
           minHeight: "100vh",
         }}>
-            <nav className="sticky top-0 z-20 w-full py-8 px-6 bg-white">
-            <div className="container mx-auto">
-            <ul className="flex justify-between sm:justify-end items-center">
-                <div className="flex space-x-4 sm:space-x-6">
-                <li>
-                    <Link href="/" className="text-black hover:text-gray-600 transition-colors">
-                    Hands
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/mission" className="text-black hover:text-gray-600 transition-colors">
-                    Mission
-                    </Link>
-                </li>
-                <li className="hidden sm:block">
-                    <a href="mailto:luiswoldu@gmail.com" className="text-black hover:text-gray-600 transition-colors">
-                    Careers
-                    </a>
-                </li>
-                <li>
-                    <Link
-                    href="/updates"
-                    className="text-black hover:text-gray-600 transition-colors">
-                    Updates
-                    </Link>
-                </li>
-                </div>
-                <li className="sm:ml-6">
-                <button
-                    onClick={() => setShowWaitlist(true)}
-                    className="text-black hover:text-gray-600 transition-colors font-helvetica border border-black px-4 py-1 rounded-full"
-                >
-                    Join Waitlist
-                </button>
-                </li>
-            </ul>
-            </div>
-        </nav>
+        
+        {/* Use Navigation component */}
+        <Navigation 
+          theme="light" 
+          onWaitlistOpen={() => setShowWaitlist(true)} 
+        />
 
         {/* Hero area with floating background heading */}
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "56px 20px 80px" }}>
@@ -92,7 +61,7 @@ export default function HomePage() {
           {/* actual accessible page heading and content sits above the decorative heading */}
           <section style={{ position: "relative", zIndex: 1 }}>
             <header style={{ marginBottom: 28 }}>
-              <h2 style={{ margin: 0, fontSize: 42, lineHeight: 1.05 }}>Latest News</h2>
+              <h2 className="font-semibold font-['Halyard_Display']" style={{ margin: 0, fontSize: 42, lineHeight: 1.05 }}>Latest News</h2>
             </header>
 
             <section aria-labelledby="updates-list">
@@ -101,15 +70,15 @@ export default function HomePage() {
                   <li key={u.slug} style={{ border: "1px solid rgba(0,0,0,0.04)", borderRadius: 12, padding: 18, background: "#fff" }}>
                     <article>
                       <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "baseline" }}>
-                        <h3 style={{ margin: 0, fontSize: 18 }}>
+                        <h3 className="font-['Halyard_Display']" style={{ margin: 0, fontSize: 20 }}>
                           {u.title}
                         </h3>
-                        <time style={{ color: "rgba(0,0,0,0.45)" }} dateTime={u.date}>
+                        <time className="font-['Halyard_Display']" style={{ color: "rgba(0,0,0,0.45)" }} dateTime={u.date}>
                           {new Date(u.date).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}
                         </time>
                       </div>
 
-                      <p style={{ marginTop: 8, marginBottom: 12, color: "rgba(0,0,0,0.7)" }}>{u.excerpt}</p>
+                      <p className="font-['Halyard_Display']" style={{ marginTop: 8, marginBottom: 12, color: "rgba(0,0,0,0.7)" }}>{u.excerpt}</p>
                     </article>
                   </li>
                 ))}
@@ -149,10 +118,15 @@ export default function HomePage() {
           }
         `}</style>
       </main>
-      
 
-      {/* ...existing page content... */}
+      {/* Waitlist Form Modal */}
+      {showWaitlist && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+            <WaitlistForm onClose={() => setShowWaitlist(false)} />
+          </div>
+        </div>
+      )}
     </>
   )
 }
-// ...existing code...
