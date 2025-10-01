@@ -1,5 +1,8 @@
-'use client'
-import Link from "next/link"
+   'use client'
+ import Link from "next/link"
+ import { useState } from "react"
+ import { Menu } from "lucide-react"
+ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 
 interface NavigationProps {
   theme?: 'dark' | 'light';
@@ -7,6 +10,7 @@ interface NavigationProps {
 }
 
 const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
+  const [open, setOpen] = useState(false)
   const isDark = theme === 'dark';
   const textColor = isDark ? 'text-white' : 'text-black';
   const hoverColor = isDark ? 'hover:text-gray-300' : 'hover:text-gray-600';
@@ -14,10 +18,11 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
   const borderColor = isDark ? 'border-white' : 'border-black';
 
   return (
-    <nav className={`sticky top-0 z-20 w-full py-8 px-6 ${bgColor}`}>
+    <nav className={`sticky top-0 z-20 w-full py-5 sm:py-8 px-4 sm:px-6 ${bgColor}`}>
       <div className="container mx-auto">
-        <ul className="flex justify-between sm:justify-end items-center">
-          <div className="flex space-x-4 sm:space-x-6">
+        {/* Desktop navigation */}
+        <ul className="hidden sm:flex justify-between items-center">
+          <div className="flex space-x-6">
             <li>
               <Link
                 href="/"
@@ -34,7 +39,7 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
                 Mission
               </Link>
             </li>
-            <li className="hidden sm:block">
+            <li>
               <a
                 href="mailto:handsforai@gmail.com"
                 className={`text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
@@ -42,7 +47,7 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
                 Careers
               </a>
             </li>
-            <li className="hidden sm:block">
+            <li>
               <Link
                 href="/updates"
                 className={`text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
@@ -60,6 +65,56 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
             </button>
           </li>
         </ul>
+
+        {/* Mobile navigation */}
+        <div className="flex sm:hidden items-center justify-between">
+          <Link
+            href="/"
+            className={`text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
+          >
+            Hands
+          </Link>
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger aria-label="Open menu" className={`p-2 rounded-md ${isDark ? 'text-white' : 'text-black'}`}>
+              <Menu className="h-6 w-6" />
+            </SheetTrigger>
+            <SheetContent side="right" className={`${bgColor} text-inherit [&>button]:hidden`}> 
+              <nav className="mt-8 flex flex-col space-y-4">
+                <Link
+                  href="/mission"
+                  onClick={() => setOpen(false)}
+                  className={`text-xl ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
+                >
+                  Mission
+                </Link>
+                <a
+                  href="mailto:handsforai@gmail.com"
+                  onClick={() => setOpen(false)}
+                  className={`text-xl ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
+                >
+                  Careers
+                </a>
+                <Link
+                  href="/updates"
+                  onClick={() => setOpen(false)}
+                  className={`text-xl ${textColor} ${hoverColor} transition-colors font-['Halyard_Display']`}
+                >
+                  Updates
+                </Link>
+                <div className="pt-2">
+                  <SheetClose asChild>
+                    <button
+                      onClick={onWaitlistOpen}
+                      className={`w-full text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display'] ${borderColor} border px-4 py-2 rounded-full`}
+                    >
+                      Join Waitlist
+                    </button>
+                  </SheetClose>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

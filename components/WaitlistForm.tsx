@@ -1,7 +1,7 @@
-'use client'
+ 'use client'
 
-import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
+ import { useState } from 'react'
+ import { getSupabase, hasSupabaseEnv } from '@/lib/supabase'
 import { Check } from 'lucide-react'
 
 interface WaitlistFormProps {
@@ -21,6 +21,11 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
     setMessage('')
 
     try {
+      if (!hasSupabaseEnv) {
+        throw new Error('Waitlist is temporarily unavailable. Missing API keys.')
+      }
+
+      const supabase = getSupabase()
       const { error } = await supabase
         .from('waitlist')  // Changed from 'waitlist_users' to 'waitlist'
         .insert([{ 
