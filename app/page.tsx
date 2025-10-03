@@ -89,7 +89,7 @@ export default function Home() {
           onClick={() => setShowWaitlist(true)}
           className="mt-8 px-8 py-2 border-2 border-white rounded-full font-helvetica text-base md:text-lg font-medium bg-white text-black transition-all duration-300 transform hover:scale-110 opacity-0 animate-slide-up animation-delay-10"
         >
-          Join Waitlist
+          Early Access
         </button>
       </div>
 

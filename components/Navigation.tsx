@@ -1,8 +1,8 @@
-   'use client'
- import Link from "next/link"
- import { useState } from "react"
- import { Menu } from "lucide-react"
- import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+'use client'
+import Link from "next/link"
+import { useState } from "react"
+import { Plus } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 
 interface NavigationProps {
   theme?: 'dark' | 'light';
@@ -18,8 +18,8 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
   const borderColor = isDark ? 'border-white' : 'border-black';
 
   return (
-    <nav className={`sticky top-0 z-20 w-full py-5 sm:py-8 px-4 sm:px-6 ${bgColor}`}>
-      <div className="container mx-auto">
+    <nav className={`sticky top-0 z-20 w-full py-5 sm:py-8 ${bgColor}`}>
+      <div className="container mx-auto px-8 sm:px-6">
         {/* Desktop navigation */}
         <ul className="hidden sm:flex justify-between items-center">
           <div className="flex space-x-6">
@@ -61,7 +61,7 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
               onClick={onWaitlistOpen}
               className={`text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display'] ${borderColor} border px-4 py-1 rounded-full`}
             >
-              Join Waitlist
+              Early Access
             </button>
           </li>
         </ul>
@@ -75,8 +75,8 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
             Hands
           </Link>
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger aria-label="Open menu" className={`p-2 rounded-md ${isDark ? 'text-white' : 'text-black'}`}>
-              <Menu className="h-6 w-6" />
+            <SheetTrigger aria-label="Open menu" className={`p-0 rounded-md ${isDark ? 'text-white' : 'text-black'}`}>
+              <Plus className={`h-6 w-6 transition-transform duration-200 ${open ? 'rotate-45' : 'rotate-0'}`} />
             </SheetTrigger>
             <SheetContent side="right" className={`${bgColor} text-inherit [&>button]:hidden`}> 
               <nav className="mt-8 flex flex-col space-y-4">
@@ -107,7 +107,7 @@ const Navigation = ({ theme = 'dark', onWaitlistOpen }: NavigationProps) => {
                       onClick={onWaitlistOpen}
                       className={`w-full text-lg ${textColor} ${hoverColor} transition-colors font-['Halyard_Display'] ${borderColor} border px-4 py-2 rounded-full`}
                     >
-                      Join Waitlist
+                      Early Access
                     </button>
                   </SheetClose>
                 </div>
