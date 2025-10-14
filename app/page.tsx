@@ -225,7 +225,7 @@ export default function Home() {
           <div className="absolute inset-0 flex flex-col justify-center p-8 md:px-20">
             <div className="w-full md:w-2/3 lg:w-full">
               <h1 className="text-[2.5rem] md:text-[5rem] font-bold font-['Halyard_Display'] text-white mb-4 leading-none opacity-0 animate-slide-up animation-delay-20">
-                Gets to knows you.
+                Gets to know you.
               </h1>
               <p className="text-lg leading-tight md:text-[1.75rem] font-['Halyard_Display'] font-semibold text-white mb-0 opacity-0 animate-slide-up animation-delay-20">
               Hands learns about your preferences, nutritional goals, even allergies — like a personal chef.
