@@ -27,10 +27,18 @@ module.exports = {
         'hero-position': 'center',
       },
       screens: {
-        xs: "440px", // Custom breakpoint at 440px
+        xs: "440px",
       },
       fontFamily: {
         helvetica: ["Helvetica Neue Pro", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        halyard: ["Halyard Display", "sans-serif"],
+      },
+      fontWeight: {
+        book: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,8 +75,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         gradient: {
-          start: "#000000", // Orange/gold color
-          end: "#FFFFFF", // Blue color
+          start: "#000000",
+          end: "#FFFFFF",
         },
       },
       borderRadius: {
@@ -94,4 +102,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-

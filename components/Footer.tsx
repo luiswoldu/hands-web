@@ -1,21 +1,15 @@
 import Link from "next/link"
 
-interface FooterProps {
-  theme?: 'light' | 'dark'
-}
-
-export default function Footer({ theme = 'dark' }: FooterProps) {
-  const isDark = theme === 'dark'
-  
+export default function Footer() {
   return (
-    <footer className={`w-full border-t ${isDark ? 'border-white/10' : 'border-black/10'} py-8`}>
+    <footer className="w-full border-t border-black/10 py-8">
       <div className="container mx-auto">
         <div className="flex flex-col space-y-8">
           {/* Logo and Links Row */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             {/* Logo/Brand with Social Icons */}
             <div className="flex items-center justify-between md:space-x-8 mb-6 md:mb-0">
-              <Link href="/" className={`text-xl font-['Halyard_Display'] font-[350] ${isDark ? 'text-white' : 'text-black'}`}>
+              <Link href="/" className="text-xl font-['Halyard_Display'] font-[350] text-black">
                 Hands
               </Link>
               
@@ -23,7 +17,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
               <div className="flex items-center space-x-2">
                 <a 
                   href="https://www.instagram.com/h.ai.nds/" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  className="p-2 rounded-md transition-colors text-black hover:text-black hover:bg-black/10"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +27,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 
                 <a 
                   href="https://www.tiktok.com/@handsaiapp" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  className="p-2 rounded-md transition-colors text-black hover:text-black hover:bg-black/10"
                   aria-label="TikTok"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +37,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 
                 <a 
                   href="https://www.youtube.com/@handsai" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  className="p-2 rounded-md transition-colors text-black hover:text-black hover:bg-black/10"
                   aria-label="YouTube"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -53,7 +47,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
                 
                 <a 
                   href="https://ca.linkedin.com/company/handsforu" 
-                  className={`p-2 rounded-md transition-colors ${isDark ? 'text-white hover:text-white hover:bg-white/10' : 'text-black hover:text-black hover:bg-black/10'}`}
+                  className="p-2 rounded-md transition-colors text-black hover:text-black hover:bg-black/10"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -66,13 +60,13 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
             {/* Navigation Links */}
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
               <div className="flex space-x-4">
-                <Link href="/mission" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <Link href="/mission" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
                   Mission
                 </Link>
-                <a href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/80 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <a href="mailto:handsforai@gmail.com" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
                   Careers
                 </a>
-                <Link href="mailto:handsforai@gmail.com" className={`${isDark ? 'text-white/70 hover:text-white' : 'text-gray-600 hover:text-black'} font-['Halyard_Display'] font-[350]`}>
+                <Link href="mailto:handsforai@gmail.com" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
                   Contact
                 </Link>
               </div>
@@ -80,7 +74,7 @@ export default function Footer({ theme = 'dark' }: FooterProps) {
           </div>
           
           {/* Copyright */}
-          <div className={`${isDark ? 'text-white/80' : 'text-gray-600'} font-['Halyard_Display'] font-[350]`}>
+          <div className="text-gray-600 font-['Halyard_Display'] font-[350]">
             Copyright © 2025 Hands. All rights reserved.
           </div>
         </div>

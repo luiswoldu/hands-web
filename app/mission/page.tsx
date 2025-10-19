@@ -13,14 +13,14 @@ export default function Mission() {
 
   return (
     <main className="bg-white text-black flex flex-col">
-      <Navigation theme="light" onWaitlistOpen={() => setShowWaitlist(true)} />
+      <Navigation onWaitlistOpen={() => setShowWaitlist(true)} />
 
       {/* Mission Section */}
       <div className="min-h-[72vh] flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-[3rem] xs:text-[6.125rem] font-bold tracking-tighter leading-none xs:leading-tight font-['Halyard_Display'] opacity-0 animate-slide-up">
+        <h1 className="text-[3rem] xs:text-[6.125rem] font-halyard font-bold tracking-tighter leading-none xs:leading-tight opacity-0 animate-slide-up">
           Hands on AI
         </h1>
-        <p className="text-[1.5rem] xs:text-[1.5rem] font-semibold max-w-2xl font-['Halyard_Display'] mt-4 xs:mt-2 opacity-0 animate-slide-up animation-delay-5 leading-7">
+        <p className="text-[1.5rem] xs:text-[1.5rem] font-halyard font-semibold max-w-2xl mt-4 xs:mt-2 opacity-0 animate-slide-up animation-delay-5 leading-7">
         Our vision is to develop AI that intuitively understands human taste preferences. 
 
         </p>
@@ -108,7 +108,7 @@ export default function Mission() {
       </section>
 
       {/* Footer Section */}
-      <Footer theme="light" />      
+      <Footer/>      
       {showWaitlist && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg max-w-md w-full mx-4">

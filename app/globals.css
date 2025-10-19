@@ -14,16 +14,25 @@ body {
 }
 
 @font-face {
-  font-family: "Helvetica Neue Pro";
-  src: local("Helvetica Neue Pro"), local("HelveticaNeuePro");
-  font-weight: normal;
+  font-family: "Halyard Display";
+  src: url("/fonts/Halyard_Display_Book.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Halyard Display";
-  src: url("/fonts/Halyard_Display_Bold.woff2") format("woff2");
-  font-weight: bold;
+  src: url("/fonts/Halyard_Display_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halyard Display";
+  src: url("/fonts/Halyard_Display_Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -38,19 +47,12 @@ body {
 
 @font-face {
   font-family: "Halyard Display";
-  src: url("/fonts/Halyard_Display_Regular.woff2") format("woff2");
-  font-weight: normal;
+  src: url("/fonts/Halyard_Display_Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Halyard Display";
-  src: url("/fonts/Halyard_Display_Book.woff2") format("woff2");
-  font-weight: 350;
-  font-style: normal;
-  font-display: swap;
-}
 
 @keyframes slideUp {
   from {
@@ -83,8 +85,8 @@ body {
   animation-delay: 0.6667s; /* 20 frames at 30fps */
 }
 
-.font-helvetica {
-  font-family: "Helvetica Neue Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.font-halyard {
+  font-family: "Halyard Display"
 }
 
 
