@@ -66,10 +66,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gradient: {
-          start: "#000000", // Orange/gold color
-          end: "#FFFFFF", // Blue color
-        },
+      },
+      boxShadow: {
+        'custom': '0 2px 10px 2px rgba(0, 0, 0, 0.1)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -94,4 +93,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-
