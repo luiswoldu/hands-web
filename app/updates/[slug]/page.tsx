@@ -54,7 +54,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                 ) : (
                   <p
                     key={i}
-                    className="text-xl leading-relaxed text-black/80 font-['Halyard_Display']"
+                    className="text-xl leading-normal text-black/80 font-['Halyard_Display']"
                   >
                     {block.text}
                   </p>
