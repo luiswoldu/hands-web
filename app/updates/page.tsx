@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import Link from "next/link"
 import Navigation from "@/components/Navigation"
@@ -14,23 +13,14 @@ export default function UpdatesPage() {
     <>
       <main className="bg-white text-black min-h-screen">
         <Navigation theme="light" onWaitlistOpen={() => setShowWaitlist(true)} />
-
         <div className="max-w-7xl mx-auto px-5 py-14 grid grid-cols-12 gap-4">
-          <div className="col-span-12 md:col-span-6 md:col-start-4 relative">
-            <h1
-              aria-hidden="true"
-              className="absolute -top-5 left-1/2 -translate-x-1/2 text-[clamp(48px,12vw,180px)] font-black opacity-[0.06] tracking-tighter pointer-events-none"
-            >
-              Updates
-            </h1>
-
-            <section className="relative z-10">
+          <div className="col-span-12 md:col-span-6 md:col-start-4">
+            <section>
               <header className="mb-7">
                 <h2 className="font-semibold text-[42px] leading-tight font-['Halyard_Display']">
                   Latest News
                 </h2>
               </header>
-
               <ul className="grid gap-5">
                 {updates.map((u) => (
                   <li key={u.slug}>
@@ -58,10 +48,8 @@ export default function UpdatesPage() {
             </section>
           </div>
         </div>
-
         <Footer theme="light" />
       </main>
-
       {showWaitlist && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg max-w-md w-full mx-4">

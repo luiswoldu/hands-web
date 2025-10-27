@@ -12,21 +12,21 @@ export type Article = {
     {
       slug: "announcing-hands",
       title: "Announcing Hands",
-      date: "2025-05-28",
+      date: "2025-10-26",
       excerpt:
         "Today, we're announcing Hands, your intelligent, personal cooking assistant.",
       content: [
         {
           type: "paragraph",
-          text: "Today, we’re excited to announce Hands, an AI web app that helps you decide what to cook, suggests recipes based on what you have at home, and even plans your weekly meals.",
+          text: "Today, we’re excited to announce Hands, an AI web app that helps you decide what to cook by suggesting relevant recipes.",
         },
         {
           type: "paragraph",
-          text: "Hands is designed to get to know you by learning from your favorite recipes, cuisines, ingredients, nutritional goals, and allergies to provide smarter, more personal suggestions.",
+          text: "Hands is designed to get to know you by learning from your favorite cuisines, meals, and ingredients, providing you with recipes based on what you already have at home, and even planning your weekly meals.",
         },
         {
           type: "paragraph",
-          text: "What makes Hands special is its true context. By saving relevant context, it remembers and learns what your preferences are. Using the latest machine learning technologies, it delivers accurate, intuitive recommendations — so every time you cook or even plan a meal, it feels like having an extra pair of Hands.",
+          text: "What makes Hands special is its true context. By saving relevant context, it remembers and learns what your preferences are. Using the latest machine learning technologies, it delivers accurate, intuitive recommendations — so every time you cook or plan a meal, it feels like having an extra pair of Hands.",
         },
         
         {
