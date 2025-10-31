@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Hands - Understanding taste",
+  title: "Hands | Your personal AI chef",
   description: "Your intelligent, personal cooking assistant",
   generator: 'v0.dev'
 }

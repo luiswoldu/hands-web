@@ -1,25 +1,18 @@
 'use client'
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { ArrowUpRight } from "lucide-react"
-import WaitlistForm from "@/components/WaitlistForm"
+import { useEffect } from "react"
+import { ArrowUpRight, ChevronRight } from "lucide-react"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 
 export default function Home() {
-  const [showWaitlist, setShowWaitlist] = useState(false)
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      // Get all currently visible containers
       const visibleEntries = entries.filter(entry => entry.isIntersecting);
 
-      // If we have visible containers, find the one closest to viewport center
       if (visibleEntries.length > 0) {
-        // Calculate viewport center
         const viewportCenter = window.innerHeight / 2;
 
-        // Calculate distance from center for each visible entry
         const entryDistances = visibleEntries.map(entry => {
           const rect = entry.boundingClientRect;
           const entryCenter = (rect.top + rect.bottom) / 2;
@@ -27,22 +20,16 @@ export default function Home() {
           return { entry, distance };
         });
 
-        // Sort by distance from center (ascending)
         entryDistances.sort((a, b) => a.distance - b.distance);
-
-        // Get the most centered entry
         const mostCenteredEntry = entryDistances[0].entry;
 
-        // Remove opacity from all images
         document.querySelectorAll('.group img').forEach(img => {
           img.classList.remove('opacity-100');
         });
 
-        // Determine which image to show based on screen size
-        const isMobile = window.innerWidth < 640; // sm breakpoint in Tailwind is 640px
+        const isMobile = window.innerWidth < 640;
         const mostCenteredContainer = mostCenteredEntry.target;
 
-        // Get the appropriate image based on screen size
         let imageToShow;
         if (isMobile) {
           imageToShow = mostCenteredContainer.querySelector('img:not(.hidden):not(.sm\\:block)') ||
@@ -52,7 +39,6 @@ export default function Home() {
             mostCenteredContainer.querySelector('img:last-child');
         }
 
-        // Add opacity to the selected image
         if (imageToShow) {
           imageToShow.classList.add('opacity-100');
         }
@@ -60,20 +46,16 @@ export default function Home() {
     }, { threshold: 0.9 });
 
     const containers = document.querySelectorAll('.group');
-    containers.forEach(container => {
-      observer.observe(container);
-    });
+    containers.forEach(container => observer.observe(container));
 
     return () => {
-      containers.forEach(container => {
-        observer.unobserve(container);
-      });
+      containers.forEach(container => observer.unobserve(container));
     };
   }, []);
 
   return (
     <main className="bg-white text-white flex flex-col">
-      <Navigation onWaitlistOpen={() => setShowWaitlist(true)} />
+      <Navigation />
 
       {/* Hero Section */}
       <div className="min-h-[calc(95vh-4rem)] flex flex-col items-center pt-20 sm:pt-32 px-4 text-center">
@@ -83,12 +65,15 @@ export default function Home() {
         <p className="text-[1.25rem] sm:text-[1.5rem] font-halyard font-semibold max-w-2xl leading-7 mt-4 sm:mt-2 opacity-0 animate-slide-up animation-delay-5 text-black">
           Introducing Hands, your intelligent, personal cooking assistant.
         </p>
-        <button
-          onClick={() => setShowWaitlist(true)}
-          className="mt-8 px-8 py-2 border-2 border-white rounded-full font-helvetica text-base md:text-lg font-medium bg-white text-black transition-all duration-300 transform hover:scale-110 opacity-0 animate-slide-up animation-delay-10"
-        >
-          Early Access
-        </button>
+        <Link
+  href="/app"
+  className="mt-8 px-4 py-1 bg-[#6CD402] text-white text-xl sm:text-lg font-halyard font-medium rounded-full transition-all duration-300 transform hover:scale-110 opacity-0 animate-slide-up animation-delay-10 flex items-center justify-center"
+>
+  <span className="relative">Start now</span>
+  <span className="relative top-[1px] ms-1 flex items-center">
+    <ChevronRight size={16} />
+  </span>
+</Link>
       </div>
 
       {/* Description Section */}
@@ -233,7 +218,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Section (White Background) */}
+      {/* Mission Section */}
       <section className="w-full bg-white text-black h-[75vh] flex items-center justify-center">
         <div className="container mx-auto flex flex-col items-center justify-center px-4 text-center">
           <h2 className="text-[3rem] sm:text-[6.125rem] font-bold tracking-tighter leading-none sm:leading-tight font-['Halyard_Display'] opacity-0 animate-slide-up">
@@ -254,12 +239,7 @@ export default function Home() {
 
       {/* Career Section */}
       <section className="w-full">
-        <div
-          className="w-full relative"
-          style={{
-            height: "100vh",
-          }}
-        >
+        <div className="w-full relative" style={{ height: "100vh" }}>
           <img
             src="/Images/careers-teamoffice.jpg"
             alt="Team office"
@@ -282,11 +262,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer Section */}
-      <Footer/>
-
-      {/* Waitlist Form Modal */}
-      {showWaitlist && <WaitlistForm onClose={() => setShowWaitlist(false)} />}
+      <Footer />
     </main>
   )
 }

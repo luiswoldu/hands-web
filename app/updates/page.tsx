@@ -27,10 +27,7 @@ export default function HomePage() {
         }}>
         
         {/* Use Navigation component */}
-        <Navigation 
-          theme="light" 
-          onWaitlistOpen={() => setShowWaitlist(true)} 
-        />
+        <Navigation/>
 
         {/* Hero area with floating background heading */}
         <div style={{ position: "relative", maxWidth: 1100, margin: "0 auto", padding: "56px 20px 80px" }}>
@@ -88,7 +85,7 @@ export default function HomePage() {
         </div>
 
         {/* Footer Section */}
-        <Footer theme="light" />
+        <Footer/>
 
         <style>{`
           @keyframes floatY {

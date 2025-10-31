@@ -1,5 +1,4 @@
 'use client'
-
 import Link from "next/link"
 
 const Navigation = () => {
@@ -10,7 +9,7 @@ const Navigation = () => {
         <div className="col-span-1">
           <Link
             href="/"
-            className="text-xl sm:text-lg tracking-tight text-black hover:text-gray-600 transition-colors font-halyard font-medium"
+            className="text-xl sm:text-lg text-black hover:text-gray-600 transition-colors font-halyard font-medium"
           >
             Hands
           </Link>
@@ -44,11 +43,14 @@ const Navigation = () => {
           </Link>
         </div>
 
-        {/* Column 3: Early Access rectangle */}
+        {/* Column 3: Sign Up CTA */}
         <div className="col-span-1 flex justify-end">
-          <div className="text-lg text-black border-black border px-4 py-1 rounded-full font-halyard font-book text-center">
-            Early Access
-          </div>
+          <Link
+            href="/try-hands-sign-up"
+            className="bg-[#6CD402] text-white text-xl sm:text-lg font-halyard font-medium px-4 py-1 rounded-full"
+          >
+            Sign up
+          </Link>
         </div>
       </div>
     </nav>
