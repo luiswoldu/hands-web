@@ -10,7 +10,7 @@ export default function TermsOfUsePage() {
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-5 py-14">
-        <p className="text-sm text-black/60 text-left sm:text-center mb-1 font-['Halyard_Display']">
+        <p className="text-lg text-black/60 text-left sm:text-center mb-1 font-['Halyard_Display']">
           June 1, 2026
         </p>
         <h1 className="text-[3.5rem] sm:text-[6rem] font-bold text-left sm:text-center mb-8 font-halyard">
