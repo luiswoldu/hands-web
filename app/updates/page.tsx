@@ -36,7 +36,7 @@ export default function UpdatesPage() {
               <Link
                 key={update.slug}
                 href={`/updates/${update.slug}`}
-                className="block p-6 border border-black/10 rounded-lg shadow-lg hover:border-black/30 transition-colors"
+                className="block p-6 border border-black/10 rounded-3xl shadow-lg hover:border-black/30 transition-colors"
               >
                 <time className="text-sm text-black/60 font-halyard">
                   {formattedDate}

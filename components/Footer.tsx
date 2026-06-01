@@ -69,6 +69,12 @@ export default function Footer() {
                 <Link href="mailto:handsforai@gmail.com" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
                   Contact
                 </Link>
+                <Link href="/terms-of-use" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
+                  Terms of Use
+                </Link>
+                <Link href="/privacy" className="text-gray-600 hover:text-black font-['Halyard_Display'] font-[350]">
+                  Privacy
+                </Link>
               </div>
             </div>
           </div>
